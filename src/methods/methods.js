@@ -1,10 +1,9 @@
 import $ from 'jquery';
+import 'owl.carousel';
 import Scrollmap from 'scrollmap';
+import { App } from '../core';
 
-const animation = {
-	init() {
-		this.faq();
-	},
+App.methods = {
 	faq() {
 		const info = $('#multi-seal-faq').find('p, ul, ol');
 
@@ -23,7 +22,20 @@ const animation = {
 
 			$(parent).find('p, ul, ol').toggleClass('hide');
 		});		
-	}
+	},
+    carousel() {
+        const $target = $('.owl-carousel');
+
+        $($target).owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            stagePadding: 5,
+            margin: 5,
+            autoplayTimeout: 6000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: false
+        });
+    }
 };
 
-export default animation;

@@ -7,9 +7,9 @@
 */
 
 import Events from "./events/events";
-import App_Build from "./app/app";
+import App from "./app/app";
 
 export {
 	Events,
-	App_Build
+	App
 };

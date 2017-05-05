@@ -1,23 +1,17 @@
-import { App_Build } from './src/core';
 import SQS from './src/sqs';
-import carousel from './src/modules/carousel';
-import animation  from './src/modules/animation';
+import { App } from './src/core';
+import * as methods from './src/methods/methods';
 
 //build the site object
 class Site_Build {
 	constructor() {
-		this.app = new App_Build();
-		this.isMobile = this.app.isMobile();
-		this.carousel = carousel;
-		this.animation = animation;
-
-		this.modules();
+		/* MODULES */
+		this.app = App;
+		
+		App.methods.carousel();
+		App.methods.faq();
 
 		console.log(this);
-	}
-	modules() {
-		carousel.init();
-		animation.init();
 	}
 }
 
