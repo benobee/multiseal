@@ -4,7 +4,8 @@ import Scrollmap from 'scrollmap';
 import { App } from '../core';
 
 App.methods({
-	faq(target) {
+	faq({ target}) {
+
 		const info = $('#multi-seal-faq').find('p, ul, ol');
 
 		info.addClass("hide");
@@ -23,7 +24,7 @@ App.methods({
 			$(parent).find('p, ul, ol').toggleClass('hide');
 		});		
 	},
-    carousel(target) {
+    carousel({ target, shape, color }) {
         const $target = $(target);
 
         $($target).owlCarousel({

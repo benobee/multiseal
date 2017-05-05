@@ -8,8 +8,13 @@ class Site_Build {
 		/* MODULES */
 		this.app = App;
 		
-		App.call("carousel", ".owl-carousel");
-		App.call("faq", "#multi-seal-faq h3");
+		App.call("carousel", {
+			target: ".owl-carousel" 
+		});
+		
+		App.call("faq", {
+			target: "#multi-seal-faq h3" 
+		});
 
 		console.log(this);
 	}
