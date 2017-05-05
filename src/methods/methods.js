@@ -3,16 +3,16 @@ import 'owl.carousel';
 import Scrollmap from 'scrollmap';
 import { App } from '../core';
 
-App.methods = {
-	faq() {
+App.methods({
+	faq(target) {
 		const info = $('#multi-seal-faq').find('p, ul, ol');
 
 		info.addClass("hide");
   
-		$('#multi-seal-faq h3').on("click", (e) => {
+		$(target).on("click", (e) => {
             info.addClass("hide");
 
-            $('#multi-seal-faq h3').removeClass('active'); 
+            $(target).removeClass('active'); 
 
 			const text = e.currentTarget;
 
@@ -23,8 +23,8 @@ App.methods = {
 			$(parent).find('p, ul, ol').toggleClass('hide');
 		});		
 	},
-    carousel() {
-        const $target = $('.owl-carousel');
+    carousel(target) {
+        const $target = $(target);
 
         $($target).owlCarousel({
             items: 1,
@@ -37,5 +37,5 @@ App.methods = {
             autoplayHoverPause: false
         });
     }
-};
+});
 

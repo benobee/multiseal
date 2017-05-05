@@ -1,6 +1,6 @@
 import SQS from './src/sqs';
 import { App } from './src/core';
-import * as methods from './src/methods/methods';
+import './src/methods/methods';
 
 //build the site object
 class Site_Build {
@@ -8,8 +8,8 @@ class Site_Build {
 		/* MODULES */
 		this.app = App;
 		
-		App.methods.carousel();
-		App.methods.faq();
+		App.call("carousel", ".owl-carousel");
+		App.call("faq", "#multi-seal-faq h3");
 
 		console.log(this);
 	}

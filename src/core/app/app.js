@@ -18,7 +18,7 @@ class App_Build {
 		this[ methodName ].call(this[ methodName ], props);
 
 		//callback
-		if (args.length - 1) {
+		if (typeof (args[ args.length - 1]) === "function") {
 			args[ args.length - 1 ].call(props, props);
 		}
 	}
